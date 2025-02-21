@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import KUTE from 'kute.js';
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const blobRef = useRef(null);
@@ -10,15 +11,22 @@ const Hero = () => {
   useEffect(() => {
     // Blob animation
     if (blobRef.current) {
-      const tween = KUTE.fromTo(
-        '#blob1',
-        { path: '#blob1' },
-        { path: '#blob2' },
-        { repeat: 999, duration: 3000, yoyo: true }
-      );
-      tween.start();
+      try {
+        const tween = KUTE.fromTo(
+          '#blob1',
+          { path: '#blob1' },
+          { path: '#blob2' },
+          { repeat: 999, duration: 3000, yoyo: true }
+        );
+        tween.start();
+      } catch (error) {
+        console.error("KUTE animation failed:", error);
+      }
     }
   }, []);
+
+  // Use relative paths for images
+  const conferenceImagePath = "./assets/slider/confSlider3.webp";
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
@@ -97,14 +105,14 @@ const Hero = () => {
               >
                 Submit Paper
               </motion.a>
-              <motion.a
-                href="/registration"
-                className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold px-8 py-3 rounded-lg hover:bg-blue-500/10 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Register Now
-              </motion.a>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  to="/registration"
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold px-8 py-3 rounded-lg hover:bg-blue-500/10 transition-all duration-300 inline-block"
+                >
+                  Register Now
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -116,9 +124,13 @@ const Hero = () => {
           >
             <div className="relative">
               <img
-                src="/assets/slider/confSlider3.webp"
+                src={conferenceImagePath}
                 alt="Conference"
                 className="rounded-2xl shadow-2xl transform -rotate-2 z-10 relative"
+                onError={(e) => {
+                  console.error("Image failed to load");
+                  e.target.src = "./assets/placeholder.jpg";
+                }}
               />
               <div 
                 className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl z-20"

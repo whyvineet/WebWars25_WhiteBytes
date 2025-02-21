@@ -14,12 +14,12 @@ const Committee = () => {
           {
             name: "Prof. Dhruv Galgotia",
             affiliation: "CEO, Galgotias University",
-            image: "/assets/committee/placeholder.jpg"
+            image: "./assets/committee/dhruvSir.jpeg"
           },
           {
             name: "Suneel Galgotia",
             affiliation: "Chairman, Galgotias University",
-            image: "/assets/committee/placeholder.jpg"
+            image: "./assets/committee/sunilSir.jpeg"
           }
         ]
       },
@@ -389,13 +389,19 @@ const Committee = () => {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 items-center justify-items-center">
               <div className="w-48 h-32 bg-white/5 rounded-lg flex items-center justify-center p-4">
-                <span className="text-center text-gray-400 text-sm">IEEE Logo Placeholder</span>
+                <span className="text-center text-gray-400 text-sm">
+                  <img src="./assets/logos/ieee.png" alt="IEEE Logo" className="h-12 w-auto" />
+                </span>
               </div>
               <div className="w-48 h-32 bg-white/5 rounded-lg flex items-center justify-center p-4">
-                <span className="text-center text-gray-400 text-sm">ACM Logo Placeholder</span>
+                <span className="text-center text-gray-400 text-sm">
+                  <img src="./assets/logos/ACM.png" alt="ACM Logo" className="h-12 w-auto" />
+                </span>
               </div>
               <div className="w-48 h-32 bg-white/5 rounded-lg flex items-center justify-center p-4">
-                <span className="text-center text-gray-400 text-sm">Springer Logo Placeholder</span>
+                <span className="text-center text-gray-400 text-sm">
+                  <img src="./assets/logos/springer.png" alt="Springer Logo" className="h-12 w-auto" />
+                </span>
               </div>
             </div>
           </motion.div>

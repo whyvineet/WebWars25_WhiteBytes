@@ -11,13 +11,13 @@ const LogoGroup = () => {
       transition={{ duration: 0.5 }}
     >
       <img 
-        src="/assets/logos/gulogo.png" 
+        src="./assets/logos/gulogo.png" 
         alt="Galgotias University Logo" 
         className="h-10 w-auto" 
       />
       <div className="h-8 w-px bg-gray-400/30"></div>
       <img 
-        src="/assets/logos/iccsai_logo1.jpeg" 
+        src="./assets/logos/iccsai_logo.jpeg" 
         alt="ICCSAI Logo" 
         className="h-12 w-auto" 
       />
