@@ -51,7 +51,11 @@ body {
 }
 
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20;
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply shadow-lg shadow-blue-500/20;
 }
 
 .btn-primary {
