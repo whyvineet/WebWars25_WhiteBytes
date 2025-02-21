@@ -5,13 +5,14 @@
 Our team is developing the website for the International Conference on Communication, Security, and Artificial Intelligence (ICCSAI) 2025 as part of the WebWars competition.
 
 ### 👥 Team Members
-| Name | Admission Number |
-|------|-----|
-| Vineet Kumar | 23SCSE1410062 |
-| Harsh Bhardwaj | 23SCSE1410069 |
-| Shourya Goyal | 23SCSE1410050 |
-| Raushan Kumar | 23SCSE1410074 |
-| Adishree Mathur | 23SCSE1410031 |
+
+| Name            | Admission Number |
+| --------------- | ---------------- |
+| Vineet Kumar    | 23SCSE1410062    |
+| Harsh Bhardwaj  | 23SCSE1410069    |
+| Shourya Goyal   | 23SCSE1410050    |
+| Raushan Kumar   | 23SCSE1410076    |
+| Adishree Mathur | 23SCSE1410031    |
 
 ## 📝 Project Overview
 
@@ -41,29 +42,33 @@ ICCSAI 2025 is an international conference bringing together researchers, academ
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v14.0.0 or higher)
 - npm (v6.0.0 or higher)
 
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/whyvineet/WebWars_WhiteBytes.git
 cd WebWars_WhiteBytes
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start the development server**
+
 ```bash
 npm run dev
 ```
 
 4. **Open your browser**
-Visit `http://localhost:3000` to view the application
+   Visit `http://localhost:3000` to view the application
 
 ## 🧪 Testing
 
