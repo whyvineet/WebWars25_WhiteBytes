@@ -47,7 +47,7 @@ body {
 
 /* Utility classes that extend Tailwind */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#60a5fa] to-[#a855f7];
 }
 
 .card-hover {
