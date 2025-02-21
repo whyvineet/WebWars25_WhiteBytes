@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #4f46e5;
+  --background: #111827;
+  --background-dark: #0f172a;
+  --text: #f8fafc;
+  --text-secondary: #cbd5e1;
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Utility classes that extend Tailwind */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-blue-500 text-blue-400 font-bold px-8 py-3 rounded-lg hover:bg-blue-500/10 transition-all duration-300;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Section styles */
+.section-padding {
+  @apply py-20;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-16;
+}
+
+/* Form elements */
+.form-input {
+  @apply w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500;
+}
+
+.form-label {
+  @apply block text-gray-300 mb-2 font-medium;
+}
+
+/* Glass card effect */
+.glass-card {
+  @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-xl;
+}
