@@ -27,7 +27,7 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/WebWars_WhiteBytes" element={<Home />} />
             <Route path="/guidelines" element={<Guidelines />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/committee" element={<Committee />} />
