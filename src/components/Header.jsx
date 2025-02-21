@@ -47,7 +47,7 @@ const Header = () => {
   };
 
   const menuItems = [
-    { title: 'Home', path: '/' },
+    { title: 'Home', path: '/WebWars_WhiteBytes' },
     { title: 'Guidelines', path: '/guidelines' },
     { title: 'Committee', path: '/committee' },
     { title: 'Registration', path: '/registration' },
