@@ -31,7 +31,7 @@ const Guidelines = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Author Guidelines</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Author Guidelines</h1>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
               Important information and requirements for submitting your research to ICCSAI 2025
             </p>
@@ -49,7 +49,7 @@ const Guidelines = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-1"
           >
-            <div className="glass-card p-6 sticky top-24">
+            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl hover:shadow-blue-500/10 transition-all duration-300 p-6 sticky top-24">
               <h3 className="text-xl font-semibold mb-4 text-blue-400">Quick Navigation</h3>
               <ul className="space-y-3">
                 <li>
@@ -269,7 +269,7 @@ const Guidelines = () => {
 
             {/* Contact Information */}
             <motion.section variants={itemVariants}>
-              <div className="p-6 glass-card">
+              <div className="p-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4 text-blue-300">Questions?</h3>
                 <p className="text-gray-300 mb-4">
                   If you have any questions regarding the submission process or guidelines, please contact the Technical Program Committee:

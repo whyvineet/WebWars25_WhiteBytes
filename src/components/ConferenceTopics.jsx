@@ -1,4 +1,3 @@
-// src/components/ConferenceTopics.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
@@ -65,7 +64,8 @@ const ConferenceTopics = () => {
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center mb-16"
-          data-aos="fade-up"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
         >
           Conference <span className="text-blue-500">Topics</span>
         </motion.h2>
@@ -74,7 +74,7 @@ const ConferenceTopics = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {topics.map((topic, index) => (
             <motion.button
-              key={index}
+              key={topic.category}
               className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
                 activeTab === index
                   ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
@@ -83,8 +83,7 @@ const ConferenceTopics = () => {
               onClick={() => setActiveTab(index)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              layout
             >
               {topic.category}
             </motion.button>
@@ -92,11 +91,7 @@ const ConferenceTopics = () => {
         </div>
 
         {/* Content */}
-        <div 
-          className="max-w-4xl mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
+        <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -108,7 +103,7 @@ const ConferenceTopics = () => {
             >
               {topics[activeTab].items.map((item, idx) => (
                 <motion.div
-                  key={idx}
+                  key={item}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}

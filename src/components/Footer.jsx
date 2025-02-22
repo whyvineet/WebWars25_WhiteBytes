@@ -36,7 +36,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             >
               <img src="/assets/logos/gulogo.png" alt="Galgotias University" className="h-12" />
-              <img src="/assets/logos/iccsai_logo1.jpeg" alt="ICCSAI 2025" className="h-12" />
+              <img src="/assets/logos/iccsai_logo.jpeg" alt="ICCSAI 2025" className="h-12" />
             </motion.div>
             <motion.address 
               className="not-italic text-gray-400 mb-6 leading-relaxed"

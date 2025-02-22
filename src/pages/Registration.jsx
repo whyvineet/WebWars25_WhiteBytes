@@ -68,7 +68,7 @@ const Registration = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-gradient">Registration</span> Information
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Registration</span> Information
           </motion.h1>
           <motion.p 
             className="text-xl text-center text-gray-300 max-w-3xl mx-auto"
@@ -119,7 +119,7 @@ const Registration = () => {
             <a 
               href="/assets/docs/ICCSAI2025_registration_form.pdf" 
               target="_blank"
-              className="btn-primary inline-flex items-center gap-2"
+              className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2"
             >
               <FiDownload />
               Download Registration Form
@@ -142,7 +142,7 @@ const Registration = () => {
             {registrationFees.map((section, index) => (
               <motion.div
                 key={index}
-                className="glass-card p-6"
+                className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl hover:shadow-blue-500/10 transition-all duration-300 p-6"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -211,7 +211,7 @@ const Registration = () => {
           </motion.h2>
 
           <motion.div
-            className="max-w-3xl mx-auto glass-card p-8"
+            className="max-w-3xl mx-auto backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl hover:shadow-blue-500/10 transition-all duration-300 p-8"
             data-aos="fade-up"
             data-aos-delay="100"
           >

@@ -240,7 +240,7 @@ const Committee = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Conference <span className="text-gradient">Committee</span>
+            Conference <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Committee</span>
           </motion.h1>
           <motion.p 
             className="text-xl text-center text-gray-300 max-w-3xl mx-auto"
@@ -383,7 +383,7 @@ const Committee = () => {
           </motion.h2>
 
           <motion.div 
-            className="glass-card p-10 max-w-4xl mx-auto"
+            className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl hover:shadow-blue-500/10 transition-all duration-300 p-10 max-w-4xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
