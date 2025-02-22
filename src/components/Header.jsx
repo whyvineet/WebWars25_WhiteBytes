@@ -5,17 +5,10 @@ import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import LogoGroup from './LogoGroup';
 
-const Header = ({ basePath = '' }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  const createPath = (path) => {
-    if (path === '/' || path === `${basePath}/`) {
-      return basePath || '/';
-    }
-    return `${basePath}${path}`;
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +59,7 @@ const Header = ({ basePath = '' }) => {
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link to={createPath('/')}>
+          <Link to="/">
             <LogoGroup />
           </Link>
 
@@ -81,14 +74,14 @@ const Header = ({ basePath = '' }) => {
               {menuItems.map((item, index) => (
                 <motion.li key={index} variants={itemVariants}>
                   <Link 
-                    to={createPath(item.path)} 
+                    to={item.path}
                     className={`text-white font-medium text-lg tracking-wide hover:text-blue-400 transition-colors px-2 py-1 relative group ${
-                      location.pathname === createPath(item.path) ? 'text-blue-400' : ''
+                      location.pathname === item.path ? 'text-blue-400' : ''
                     }`}
                   >
                     {item.title}
                     <span className={`absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${
-                      location.pathname === createPath(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                      location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}></span>
                   </Link>
                 </motion.li>
@@ -135,9 +128,9 @@ const Header = ({ basePath = '' }) => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Link 
-                  to={createPath(item.path)} 
+                  to={item.path}
                   className={`text-white text-lg font-medium hover:text-blue-400 transition-colors ${
-                    location.pathname === createPath(item.path) ? 'text-blue-400' : ''
+                    location.pathname === item.path ? 'text-blue-400' : ''
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

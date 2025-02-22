@@ -24,13 +24,12 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basePath}>
       <div className="app-container bg-gradient-to-b from-gray-900 to-gray-950 text-white min-h-screen">
         <Header basePath={basePath} />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/WebWars_WhiteBytes" element={<Home />} />
             <Route path="/guidelines" element={<Guidelines />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/committee" element={<Committee />} />
