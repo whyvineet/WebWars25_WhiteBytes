@@ -51,7 +51,7 @@ const Home = () => {
               <div className="relative">
                 <div className="relative z-10">
                   <img
-                    src="/assets/slider/confSlider1.webp"
+                    src="./assets/slider/confSlider1.webp"
                     alt="Conference Attendees"
                     className="rounded-xl shadow-2xl"
                   />

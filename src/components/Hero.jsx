@@ -146,7 +146,7 @@ const Hero = () => {
           >
             <div className="relative group">
               <motion.img
-                src="/assets/slider/confSlider4.webp"
+                src="./assets/slider/confSlider4.webp"
                 alt="Conference"
                 className="rounded-2xl shadow-2xl transform -rotate-2 transition-transform duration-500 group-hover:rotate-0"
                 onError={(e) => {

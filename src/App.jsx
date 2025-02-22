@@ -1,6 +1,7 @@
 // src/App.jsx
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import LoadingPage from './components/LoadingPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -14,33 +15,50 @@ import './styles/globals.css';
 
 function App() {
   const basePath = import.meta.env.MODE === 'production' ? '/WebWars_WhiteBytes' : '';
-  
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
       easing: 'ease-out-cubic'
     });
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <BrowserRouter basename={basePath}>
-      <div className="app-container bg-gradient-to-b from-gray-900 to-gray-950 text-white min-h-screen">
-        <Header basePath={basePath} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/guidelines" element={<Guidelines />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/committee" element={<Committee />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* Fallback route */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <>
+      {isLoading ? (
+        <div className="opacity-100 transition-opacity duration-700">
+          <LoadingPage />
+        </div>
+      ) : (
+        <div className="opacity-0 transition-opacity duration-700 opacity-100">
+          <BrowserRouter basename={basePath}>
+            <div className="app-container bg-gradient-to-b from-gray-900 to-gray-950 text-white min-h-screen">
+              <Header basePath={basePath} />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/guidelines" element={<Guidelines />} />
+                  <Route path="/registration" element={<Registration />} />
+                  <Route path="/committee" element={<Committee />} />
+                  <Route path="/contact" element={<Contact />} />
+                  {/* Fallback route */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        </div>
+      )}
+    </>
   );
 }
 
