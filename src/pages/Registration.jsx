@@ -1,7 +1,7 @@
 // src/pages/Registration.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiDownload, FiCreditCard, FiCheck } from 'react-icons/fi';
+import React from "react";
+import { motion } from "framer-motion";
+import { FiDownload, FiCreditCard, FiCheck } from "react-icons/fi";
 
 const Registration = () => {
   const registrationFees = [
@@ -11,50 +11,53 @@ const Registration = () => {
         { type: "IEEE Member Indian", amount: "₹5,000" },
         { type: "Non-IEEE Member Indian", amount: "₹6,000" },
         { type: "IEEE Member Foreign", amount: "$250" },
-        { type: "Non-IEEE Member Foreign", amount: "$300" }
-      ]
+        { type: "Non-IEEE Member Foreign", amount: "$300" },
+      ],
     },
     {
       category: "Listeners",
       subcategories: [
         { type: "Students", amount: "₹2,000" },
         { type: "Faculty/Industry", amount: "₹3,000" },
-        { type: "Foreign Participants", amount: "$150" }
-      ]
+        { type: "Foreign Participants", amount: "$150" },
+      ],
     },
     {
       category: "Additional",
       subcategories: [
         { type: "Extra Page Charge (per page)", amount: "₹1,000" },
-        { type: "Additional Paper (same author)", amount: "₹4,000" }
-      ]
-    }
+        { type: "Additional Paper (same author)", amount: "₹4,000" },
+      ],
+    },
   ];
 
   const registrationSteps = [
     {
       title: "Paper Acceptance",
-      description: "Wait for your paper to be accepted through the CMT platform. You will receive a notification email.",
-      icon: <FiCheck className="text-3xl text-green-400" />
+      description:
+        "Wait for your paper to be accepted through the CMT platform. You will receive a notification email.",
+      icon: <FiCheck className="text-3xl text-green-400" />,
     },
     {
       title: "Fee Payment",
-      description: "Make the payment using the bank details provided below. Keep the transaction receipt/screenshot for reference.",
-      icon: <FiCreditCard className="text-3xl text-blue-400" />
+      description:
+        "Make the payment using the bank details provided below. Keep the transaction receipt/screenshot for reference.",
+      icon: <FiCreditCard className="text-3xl text-blue-400" />,
     },
     {
       title: "Registration Form",
-      description: "Fill out the registration form, upload the payment proof, and submit before the registration deadline.",
-      icon: <FiDownload className="text-3xl text-purple-400" />
-    }
+      description:
+        "Fill out the registration form, upload the payment proof, and submit before the registration deadline.",
+      icon: <FiDownload className="text-3xl text-purple-400" />,
+    },
   ];
 
   const bankDetails = {
-    accountName: "ICCSAI 2025 Conference",
-    accountNumber: "123456789012345",
-    ifscCode: "BANK0001234",
-    bankName: "State Bank of India",
-    branch: "Greater Noida Sector-17"
+    accountName: "GU Conferences",
+    accountNumber: "6717000100025845",
+    ifscCode: "PUNB0671700",
+    bankName: "Punjab National Bank, Noida",
+    swiftCode: "PUNBINBBMSN",
   };
 
   return (
@@ -62,21 +65,25 @@ const Registration = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl font-bold text-center mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Registration</span> Information
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Registration
+            </span>{" "}
+            Information
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl text-center text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Complete your registration for ICCSAI 2025. Early registration is recommended for authors with accepted papers.
+            Complete your registration for ICCSAI 2025. Early registration is
+            recommended for authors with accepted papers.
           </motion.p>
         </div>
       </section>
@@ -84,7 +91,7 @@ const Registration = () => {
       {/* Registration Process */}
       <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center mb-16"
             data-aos="fade-up"
           >
@@ -96,7 +103,10 @@ const Registration = () => {
               <motion.div
                 key={index}
                 className="backdrop-blur-md bg-blue-900/10 rounded-xl overflow-hidden border border-blue-500/30 p-6 text-center"
-                whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.3)' }}
+                whileHover={{
+                  y: -5,
+                  boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.3)",
+                }}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -105,19 +115,21 @@ const Registration = () => {
                     {step.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-300">{step.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-300">
+                  {step.title}
+                </h3>
                 <p className="text-gray-300">{step.description}</p>
               </motion.div>
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             className="mt-16 text-center"
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <a 
-              href="/assets/docs/ICCSAI2025_registration_form.pdf" 
+            <a
+              href="/assets/docs/ICCSAI2025_registration_form.pdf"
               target="_blank"
               className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold px-8 py-3 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 active:scale-95 inline-flex items-center gap-2"
             >
@@ -131,7 +143,7 @@ const Registration = () => {
       {/* Fee Structure */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center mb-16"
             data-aos="fade-up"
           >
@@ -146,23 +158,31 @@ const Registration = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <h3 className="text-2xl font-semibold mb-6 text-blue-400">{section.category}</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-blue-400">
+                  {section.category}
+                </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-700">
-                        <th className="text-left py-3 px-4 text-gray-300 font-medium">Type</th>
-                        <th className="text-right py-3 px-4 text-gray-300 font-medium">Amount</th>
+                        <th className="text-left py-3 px-4 text-gray-300 font-medium">
+                          Type
+                        </th>
+                        <th className="text-right py-3 px-4 text-gray-300 font-medium">
+                          Amount
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {section.subcategories.map((item, idx) => (
-                        <tr 
-                          key={idx} 
+                        <tr
+                          key={idx}
                           className="border-b border-gray-800 hover:bg-blue-900/10 transition-colors"
                         >
                           <td className="py-3 px-4 text-white">{item.type}</td>
-                          <td className="py-3 px-4 text-right font-medium text-blue-300">{item.amount}</td>
+                          <td className="py-3 px-4 text-right font-medium text-blue-300">
+                            {item.amount}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -177,23 +197,27 @@ const Registration = () => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <h3 className="text-xl font-semibold mb-4 text-blue-300">Important Notes:</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-300">
+              Important Notes:
+            </h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start gap-2">
-                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" /> 
+                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" />
                 At least one author must register for each accepted paper
               </li>
               <li className="flex items-start gap-2">
-                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" /> 
+                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" />
                 Registration deadline: 15th March, 2025
               </li>
               <li className="flex items-start gap-2">
-                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" /> 
-                Registration fee includes conference kit, lunch, and refreshments during the conference
+                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" />
+                Registration fee includes conference kit, lunch, and
+                refreshments during the conference
               </li>
               <li className="flex items-start gap-2">
-                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" /> 
-                Authors must present their papers at the conference to be included in the proceedings
+                <FiCheck className="text-green-400 text-lg mt-1 flex-shrink-0" />
+                Authors must present their papers at the conference to be
+                included in the proceedings
               </li>
             </ul>
           </motion.div>
@@ -203,7 +227,7 @@ const Registration = () => {
       {/* Payment Details */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center mb-16"
             data-aos="fade-up"
           >
@@ -217,18 +241,26 @@ const Registration = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-xl font-semibold mb-6 text-blue-400">Bank Transfer</h3>
+                <h3 className="text-xl font-semibold mb-6 text-blue-400">
+                  Bank Transfer
+                </h3>
                 <div className="space-y-4">
                   {Object.entries(bankDetails).map(([key, value], idx) => (
                     <div key={idx} className="flex flex-col">
-                      <span className="text-gray-400 text-sm">{key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())}</span>
+                      <span className="text-gray-400 text-sm">
+                        {key
+                          .replace(/([A-Z])/g, " $1")
+                          .replace(/^./, (str) => str.toUpperCase())}
+                      </span>
                       <span className="text-white font-medium">{value}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-6 text-blue-400">QR Code Payment</h3>
+                <h3 className="text-xl font-semibold mb-6 text-blue-400">
+                  QR Code Payment
+                </h3>
                 <div className="flex justify-center">
                   <div className="p-4 bg-white rounded-xl">
                     <div className="w-48 h-48 bg-gray-300 rounded-md flex items-center justify-center">
@@ -243,7 +275,8 @@ const Registration = () => {
 
             <div className="mt-8 p-4 bg-yellow-500/10 border border-yellow-500/50 rounded-lg">
               <p className="text-yellow-300 text-center">
-                Please mention your paper ID in the payment reference for easy tracking.
+                Please mention your paper ID in the payment reference for easy
+                tracking.
               </p>
             </div>
           </motion.div>

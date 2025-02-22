@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowDown } from 'react-icons/io';
+import { title } from 'framer-motion/client';
 
 const TrackShowcase = () => {
   const [expandedTrack, setExpandedTrack] = useState(null);
@@ -44,6 +45,34 @@ const TrackShowcase = () => {
         "Dr. Ramyadevi R, Saveetha Engineering College, Tamilnadu India",
         "Dr T.Ganesh Kumar, School of Computer Science and Engineering, Galgotias University Greater Noida, India",
         "Dr Priti Rishi, SRM Institute of science and technology, Vadapalani campus, Chennai, India"
+      ]
+    },
+    {
+      id: 6,
+      title: "Federated Learning for Predictive Healthcare Paradigm",
+      chairs: [
+        "Dr. Balamurugan Balasamy,Shiv Nadar University, Delhi-NCR Campus, Noida, India",
+        "Dr. Seema Rawat, Amity University, Uttar Pradesh, Noida, India",
+        "Dr Prithi Samuel,SRM Institute of Science and Technology, Kattankulathur, Chennai, India",
+        "Dr. Firoz Khan, Center for Information & Communication Sciences, Ball state university, USA"
+      ]
+    },
+    {
+      id: 7,
+      title: "Advances in Adversarial and Multi- Source Transfer learning for secure and Robust Modern Healthcare System",
+      chairs: [
+        "Dr. Ganesh Gopal Devarajan, SRM Institute of Science and Technology, Delhi - NCR Campus, India",
+        "Dr. Rajendra Prasad Mahapatra, SRM Institute of Science and Technology, Delhi - NCR Campus, India"
+      ]
+    },
+    {
+      id: 8,
+      title: "Transformation with AI, Deep Learning Breakthroughs and Real World Applications",
+      chairs: [
+        "Dr P Privietha, Sathyabama Institute of Science and Technology,Chennai, TN, India",
+        "Dr T.Ganesh Kumar,School of Computer Science and Engineering, Galgotias University Greater Noida, India",
+        "Dr Shajilin Loret,Francis Xavier Engineering College,Tirunelveli, Tamilnadu, India",
+        "Dr Manish T.I,Department of Computer Science and Engineering,SCMS,School of Engineering and Technology, Kerala"
       ]
     }
   ];
