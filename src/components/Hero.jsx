@@ -145,17 +145,16 @@ const Hero = () => {
             className="relative hidden lg:block"
           >
             <div className="relative group">
+            <motion.div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500 rounded-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></motion.div>
               <motion.img
                 src="./assets/slider/confSlider4.webp"
                 alt="Conference"
                 className="rounded-2xl shadow-2xl transform -rotate-2 transition-transform duration-500 group-hover:rotate-0"
                 onError={(e) => {
                   console.error("Image failed to load");
-                  e.target.src = "/assets/slider/confSlider4.jpg";
+                  e.target.src = "./assets/slider/confSlider4.jpg";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
-              <motion.div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500 rounded-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></motion.div>
             </div>
           </motion.div>
         </div>
