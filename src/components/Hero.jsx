@@ -30,7 +30,7 @@ const AnimatedBackground = () => {
         viewBox="0 0 900 600"
         width="100%"
         height="100%"
-        preserveAspectRatio="none"
+        preserveAspectRatio="xMidYMid meet"
         className="opacity-30"
       >
         <path
@@ -151,7 +151,7 @@ const Hero = () => {
                 className="rounded-2xl shadow-2xl transform -rotate-2 transition-transform duration-500 group-hover:rotate-0"
                 onError={(e) => {
                   console.error("Image failed to load");
-                  e.target.src = "/assets/placeholder.jpg";
+                  e.target.src = "/assets/slider/confSlider4.jpg";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl group-hover:opacity-0 transition-opacity duration-500"></div>
