@@ -91,7 +91,7 @@ const AppContent = () => {
 };
 
 function App() {
-  const basePath = import.meta.env.MODE === 'production' ? '/WebWars_WhiteBytes' : '';
+  const basePath = import.meta.env.MODE === 'production' ? '/WebWars25_WhiteBytes' : '';
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
