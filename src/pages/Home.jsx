@@ -57,7 +57,7 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-xl"></div>
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-blue-500/50 rounded-xl z-0"></div>
+                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-blue-500/50 rounded-xl z-0 hidden lg:block"></div>
               </div>
             </motion.div>
 
