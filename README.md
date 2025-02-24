@@ -73,14 +73,6 @@ npm run dev
 4. **Open your browser**
    Visit `http://localhost:3000` to view the application
 
-## 🧪 Testing
-
-Run the test suite to ensure everything is working correctly:
-
-```bash
-npm test
-```
-
 ## 📤 Deployment
 
 The website is deployed using GitHub Pages. Access the live site here:
