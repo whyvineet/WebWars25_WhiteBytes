@@ -53,8 +53,8 @@ ICCSAI 2025 is an international conference bringing together researchers, academ
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/whyvineet/WebWars_WhiteBytes.git
-cd WebWars_WhiteBytes
+git clone https://github.com/whyvineet/WebWars25_WhiteBytes.git
+cd WebWars25_WhiteBytes
 ```
 
 2. **Install dependencies**
