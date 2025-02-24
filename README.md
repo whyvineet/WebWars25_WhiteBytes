@@ -4,15 +4,16 @@
 
 Our team is developing the website for the International Conference on Communication, Security, and Artificial Intelligence (ICCSAI) 2025 as part of the WebWars competition.
 
-### 👥 Team Members
+## 👥 Team Details
 
-| Name            | Admission Number |
+##### Team Leader: Vineet Kumar (23SCSE1410062)
+
+| Member Name     | Admission Number |
 | --------------- | ---------------- |
-| Vineet Kumar    | 23SCSE1410062    |
 | Harsh Bhardwaj  | 23SCSE1410069    |
+| Adishree Mathur | 23SCSE1410031    |
 | Shourya Goyal   | 23SCSE1410050    |
 | Raushan Kumar   | 23SCSE1410076    |
-| Adishree Mathur | 23SCSE1410031    |
 
 ## 📝 Project Overview
 
