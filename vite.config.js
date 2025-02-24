@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       react()
     ],
-    base: isProduction ? '/WebWars_WhiteBytes/' : '/',
+    base: isProduction ? '/WebWars25_WhiteBytes/' : '/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
