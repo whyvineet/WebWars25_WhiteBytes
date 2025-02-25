@@ -131,7 +131,7 @@ const Hero = () => {
               </p>
               <p className="text-lg text-gray-400 flex items-center justify-center lg:justify-start gap-2">
                 <MapPin className="text-blue-400" size={20} />
-                Galgotias University, Greater Noida, India
+                Galgotias University, Greater Noida
               </p>
             </motion.div>
 
