@@ -978,8 +978,8 @@ const Committee = () => {
               <div className="w-48 h-32 bg-white/5 rounded-lg flex items-center justify-center p-4">
                 <span className="text-center text-gray-400 text-sm">
                   <img
-                    src="./assets/logos/ACM.png"
-                    alt="ACM Logo"
+                    src="./assets/logos/placehiolder.png"
+                    alt="Placeholder"
                     className="h-12 w-auto"
                   />
                 </span>
@@ -987,8 +987,8 @@ const Committee = () => {
               <div className="w-48 h-32 bg-white/5 rounded-lg flex items-center justify-center p-4">
                 <span className="text-center text-gray-400 text-sm">
                   <img
-                    src="./assets/logos/springer.png"
-                    alt="Springer Logo"
+                    src="./assets/logos/placeholder.png"
+                    alt="Placeholder"
                     className="h-12 w-auto"
                   />
                 </span>
