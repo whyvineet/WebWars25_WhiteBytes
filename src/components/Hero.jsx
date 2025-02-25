@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import KUTE from "kute.js";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { Calendar, MapPin, Send, UserPlus, ChevronDown } from "react-feather";
 
 const AnimatedBackground = () => {
   const blobRef = useRef(null);
@@ -124,10 +125,12 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-2"
             >
-              <p className="text-xl md:text-2xl font-light text-gray-200">
+              <p className="text-xl md:text-2xl font-light text-gray-200 flex items-center justify-center lg:justify-start gap-2">
+                <Calendar className="text-blue-400" size={20} />
                 4th - 6th April, 2025
               </p>
-              <p className="text-lg text-gray-400">
+              <p className="text-lg text-gray-400 flex items-center justify-center lg:justify-start gap-2">
+                <MapPin className="text-blue-400" size={20} />
                 Galgotias University, Greater Noida, India
               </p>
             </motion.div>
@@ -142,10 +145,11 @@ const Hero = () => {
                 href="https://cmt3.research.microsoft.com/ICCSAI2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <Send size={18} />
                 Submit Paper
               </motion.a>
               <motion.div
@@ -154,8 +158,9 @@ const Hero = () => {
               >
                 <Link
                   to="/registration"
-                  className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold px-8 py-4 rounded-xl hover:bg-blue-500/10 transition-all duration-300 inline-block"
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold px-8 py-4 rounded-xl hover:bg-blue-500/10 transition-all duration-300 inline-flex items-center gap-2"
                 >
+                  <UserPlus size={18} />
                   Register Now
                 </Link>
               </motion.div>
@@ -208,18 +213,7 @@ const Hero = () => {
       >
         <div className="flex flex-col items-center">
           <span className="text-sm text-gray-400 mb-2">Scroll to explore</span>
-          <motion.div
-            className="w-1 h-12 bg-gradient-to-b from-blue-500 to-transparent rounded-full"
-            animate={{
-              y: [0, 12, 0],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-          />
+          <ChevronDown className="text-blue-400 mt-2 animate-bounce" size={20} />
         </div>
       </motion.div>
     </section>
