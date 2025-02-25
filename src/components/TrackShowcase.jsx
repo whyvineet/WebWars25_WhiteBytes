@@ -11,7 +11,9 @@ const TrackShowcase = () => {
     {
       id: 1,
       title: "Emerging Trends and Applications in Machine Learning and Deep Learning",
-      chairs: []
+      chairs: [
+        "Will be updated soon..."
+      ]
     },
     {
       id: 2,
