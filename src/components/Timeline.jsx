@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { FiPaperclip, FiCalendar, FiCheckCircle, FiClock, FiEdit } from "react-icons/fi";
 
 const Timeline = () => {
   const events = [
-    { date: "25th December, 2024", description: "Abstract Submission Date" },
-    { date: "25th January, 2025", description: "Full Paper Submission Date" },
-    { date: "28th February, 2025", description: "Notification of Acceptance" },
-    { date: "15th March, 2025", description: "Registration Deadline Date" },
-    { date: "4th - 6th April, 2025", description: "Conference Date" },
+    { date: "25th December, 2024", description: "Abstract Submission Date", icon: <FiEdit /> },
+    { date: "25th January, 2025", description: "Full Paper Submission Date", icon: <FiPaperclip /> },
+    { date: "28th February, 2025", description: "Notification of Acceptance", icon: <FiCheckCircle /> },
+    { date: "15th March, 2025", description: "Registration Deadline Date", icon: <FiClock /> },
+    { date: "4th - 6th April, 2025", description: "Conference Date", icon: <FiCalendar /> },
   ];
 
   const [currentDate] = useState(new Date());
@@ -129,13 +130,14 @@ const Timeline = () => {
                   }`}
                 >
                   <h3
-                    className={`text-lg md:text-xl mb-2 ${
+                    className={`text-lg md:text-xl mb-2 flex items-center ${
                       status === "completed"
                         ? "font-semibold text-blue-100"
                         : "font-normal text-blue-200/70"
                     }`}
                   >
-                    {event.date}
+                    {event.icon}
+                    <span className="ml-2">{event.date}</span>
                   </h3>
                   <p
                     className={`${
