@@ -77,7 +77,7 @@ npm run dev
 
 The website is deployed using GitHub Pages. Access the live site here:
 
-🌐 [ICCSAI 2025 Conference Website](https://whyvineet.github.io/WebWars_WhiteBytes/)
+🌐 [ICCSAI 2025 Conference Website](https://whyvineet.github.io/WebWars25_WhiteBytes/)
 
 ## 🛣️ Future Roadmap
 
