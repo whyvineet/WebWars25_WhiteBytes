@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
 import KUTE from "kute.js";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const AnimatedBackground = () => {
   const blobRef = useRef(null);
@@ -56,8 +58,30 @@ const AnimatedBackground = () => {
 };
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    { src: "./assets/slider/confSlider4.webp" },
+    { src: "./assets/slider/confSlider2.webp" },
+    { src: "./assets/slider/confSlider3.webp" },
+    { src: "./assets/slider/confSlider5.webp" },
+    { src: "./assets/slider/confSlider6.webp" },
+    { src: "./assets/slider/confSlider7.webp" }
+  ];
+
+  useEffect(() => {
+    let timer;
+    if (isOpen) {
+      timer = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 5000);
+    }
+    return () => clearInterval(timer);
+  }, [isOpen, images.length]);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900 rounded-bl-[80px]">
       <AnimatedBackground />
 
       <div className="container mx-auto px-4 py-16 z-10">
@@ -144,10 +168,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative hidden lg:block"
           >
-            <div className="relative group">
-            <motion.div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500 rounded-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></motion.div>
+            <div className="relative group cursor-pointer" onClick={() => setIsOpen(true)}>
+              <motion.div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-blue-500 rounded-2xl transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></motion.div>
               <motion.img
-                src="./assets/slider/confSlider4.webp"
+                src={images[0].src}
                 alt="Conference"
                 className="rounded-2xl shadow-2xl transform -rotate-2 transition-transform duration-500 group-hover:rotate-0"
                 onError={(e) => {
@@ -156,6 +180,22 @@ const Hero = () => {
                 }}
               />
             </div>
+            {isOpen && (
+              <Lightbox
+                open={isOpen}
+                close={() => setIsOpen(false)}
+                slides={images}
+                index={currentIndex}
+                styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.7)" } }}
+                render={{
+                  slide: ({ slide }) => (
+                    <div className="relative h-full flex flex-col items-center justify-center">
+                      <img src={slide.src} alt="Event" className="max-h-[70vh] max-w-[70vw] rounded-lg shadow-lg" />
+                    </div>
+                  )
+                }}
+              />
+            )}
           </motion.div>
         </div>
       </div>
