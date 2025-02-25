@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiChevronLeft, FiChevronRight as FiChevronNext } from 'react-icons/fi';
 
 const ConferenceTopics = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -59,6 +59,14 @@ const ConferenceTopics = () => {
     }
   ];
 
+  const handlePrev = () => {
+    setActiveTab((prev) => (prev === 0 ? topics.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveTab((prev) => (prev === topics.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
@@ -70,8 +78,8 @@ const ConferenceTopics = () => {
           Conference <span className="text-blue-500">Topics</span>
         </motion.h2>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Tabs for desktop */}
+        <div className="hidden md:flex flex-wrap justify-center gap-4 mb-12">
           {topics.map((topic, index) => (
             <motion.button
               key={topic.category}
@@ -88,6 +96,25 @@ const ConferenceTopics = () => {
               {topic.category}
             </motion.button>
           ))}
+        </div>
+
+        {/* Buttons for mobile */}
+        <div className="md:hidden flex justify-between items-center mb-12">
+          <button
+            className="p-2 bg-gray-800 text-gray-300 rounded-full hover:bg-gray-700"
+            onClick={handlePrev}
+          >
+            <FiChevronLeft size={24} />
+          </button>
+          <h3 className="px-6 py-3 rounded-full text-xl font-semibold text-white bg-blue-600">
+            {topics[activeTab].category}
+          </h3>
+          <button
+            className="p-2 bg-gray-800 text-gray-300 rounded-full hover:bg-gray-700"
+            onClick={handleNext}
+          >
+            <FiChevronNext size={24} />
+          </button>
         </div>
 
         {/* Content */}
