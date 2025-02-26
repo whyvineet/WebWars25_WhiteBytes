@@ -2,61 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
-import KUTE from "kute.js";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Calendar, MapPin, Send, UserPlus, ChevronDown } from "react-feather";
-
-const AnimatedBackground = () => {
-  const blobRef = useRef(null);
-
-  useEffect(() => {
-    if (blobRef.current) {
-      try {
-        const tween = KUTE.fromTo(
-          "#blob1",
-          { path: "#blob1" },
-          { path: "#blob2" },
-          { repeat: 999, duration: 3000, yoyo: true }
-        );
-        tween.start();
-      } catch (error) {
-        console.error("Blob animation failed:", error);
-      }
-    }
-  }, []);
-
-  return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
-      <svg
-        ref={blobRef}
-        viewBox="0 0 900 600"
-        width="100%"
-        height="100%"
-        preserveAspectRatio="xMidYMid meet"
-        className="opacity-30"
-      >
-        <path
-          id="blob1"
-          d="M442.5,298.5Q423,347,381.5,379Q340,411,285,427.5Q230,444,183.5,407Q137,370,109.5,319Q82,268,97.5,207.5Q113,147,168,111.5Q223,76,286,70.5Q349,65,401.5,98.5Q454,132,458,191Q462,250,442.5,298.5Z"
-          fill="url(#gradient1)"
-        />
-        <path
-          id="blob2"
-          d="M446,309.5Q433,369,386,415Q339,461,277,448.5Q215,436,166,404Q117,372,82,317Q47,262,69.5,196.5Q92,131,151,93Q210,55,280,49Q350,43,402,90Q454,137,456.5,193.5Q459,250,446,309.5Z"
-          fill="url(#gradient1)"
-          style={{ visibility: "hidden" }}
-        />
-        <defs>
-          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#4338ca" />
-            <stop offset="100%" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-};
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +31,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900 rounded-bl-[80px]">
-      <AnimatedBackground />
 
       <div className="container mx-auto px-4 py-16 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
