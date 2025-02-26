@@ -1,31 +1,29 @@
-// src/App.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import LoadingPage from './components/LoadingPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Guidelines from './pages/Guidelines';
-import Registration from './pages/Registration';
-import Committee from './pages/Committee';
-import Contact from './pages/Contact';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './styles/globals.css';
 
-// Enhanced ScrollToTop component with immediate scroll
+// Lazy load other pages
+const Guidelines = lazy(() => import('./pages/Guidelines'));
+const Registration = lazy(() => import('./pages/Registration'));
+const Committee = lazy(() => import('./pages/Committee'));
+const Contact = lazy(() => import('./pages/Contact'));
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    // Force immediate scroll to top
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant' // Changed from 'smooth' to 'instant' for more reliable behavior
+      behavior: 'instant'
     });
 
-    // Backup scroll for dynamic content
     const timeoutId = setTimeout(() => {
       if (window.pageYOffset > 0) {
         window.scrollTo(0, 0);
@@ -38,33 +36,27 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Enhanced AppContent component with scroll management
 const AppContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Immediate scroll reset
     window.scrollTo(0, 0);
     
-    // Reset scroll for any main content container
     const mainContent = document.querySelector('main');
     if (mainContent) {
       mainContent.scrollTop = 0;
     }
 
-    // Reset any custom scroll containers
     const scrollContainers = document.querySelectorAll('.scroll-container');
     scrollContainers.forEach(container => {
       container.scrollTop = 0;
     });
 
-    // Reinitialize AOS animations
     if (AOS) {
       AOS.refresh();
     }
   }, [location]);
 
-  // Prevent scroll restoration on navigation
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -78,10 +70,26 @@ const AppContent = () => {
       <main className="scroll-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/guidelines" element={<Guidelines />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/committee" element={<Committee />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/guidelines" element={
+            <Suspense fallback={<LoadingPage />}>
+              <Guidelines />
+            </Suspense>
+          } />
+          <Route path="/registration" element={
+            <Suspense fallback={<LoadingPage />}>
+              <Registration />
+            </Suspense>
+          } />
+          <Route path="/committee" element={
+            <Suspense fallback={<LoadingPage />}>
+              <Committee />
+            </Suspense>
+          } />
+          <Route path="/contact" element={
+            <Suspense fallback={<LoadingPage />}>
+              <Contact />
+            </Suspense>
+          } />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
@@ -95,7 +103,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize AOS with manual trigger option
     AOS.init({
       duration: 1000,
       once: true,
